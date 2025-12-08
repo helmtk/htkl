@@ -1,3 +1,5 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/helmtk/htkl.svg)](https://pkg.go.dev/github.com/helmtk/htkl)
+
 # htkl
 
 htkl is a structured template language, used by the helmtk project.
