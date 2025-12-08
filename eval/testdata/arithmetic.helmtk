@@ -1,0 +1,13 @@
+addition: 5 + 3
+subtraction: 10 - 3
+multiplication: 4 * 5
+division: 15 / 3
+string_concat: "hello" + " world"
+negation: -42
+###
+addition: 8
+division: 5
+multiplication: 20
+negation: -42
+string_concat: hello world
+subtraction: 7

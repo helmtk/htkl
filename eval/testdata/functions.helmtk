@@ -1,0 +1,7 @@
+upper_func: upper("hello")
+round_func: round(3.7)
+len_func: len([1, 2, 3])
+###
+len_func: 3
+round_func: 4
+upper_func: HELLO

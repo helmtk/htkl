@@ -1,0 +1,5 @@
+simple_pipe: "hello" | upper
+chained_pipes: "  hello  " | trim | upper
+###
+chained_pipes: HELLO
+simple_pipe: HELLO

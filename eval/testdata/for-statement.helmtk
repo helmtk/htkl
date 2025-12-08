@@ -1,0 +1,38 @@
+let items = [1, 2, 3]
+
+simple: [for i, x in items do x end]
+doubled: [for i, x in items do x * 2 end]
+with_index: [for i, x in items do i end]
+with_if: [
+    for i, x in items do
+        if i < 2 do
+            x
+        end
+    end
+]
+obj: {
+    for i, x in items do
+        if i == 1 do
+            key: x
+        end
+    end
+}
+
+###
+doubled:
+- 2
+- 4
+- 6
+simple:
+- 1
+- 2
+- 3
+with_index:
+- 0
+- 1
+- 2
+with_if:
+- 1
+- 2
+obj:
+    key: 2

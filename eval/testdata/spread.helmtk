@@ -1,0 +1,15 @@
+let base_array = [1, 2]
+let base_obj = {a: 1, b: 2}
+
+array_spread: [spread base_array, 3, 4]
+object_spread: {spread base_obj, c: 3}
+###
+array_spread:
+- 1
+- 2
+- 3
+- 4
+object_spread:
+  a: 1
+  b: 2
+  c: 3

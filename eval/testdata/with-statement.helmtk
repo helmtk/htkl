@@ -1,0 +1,47 @@
+# Test with...as syntax for naming context variables
+let ingress = {
+  host: "example.com"
+  path: "/api"
+  tls: {
+    secretName: "example-tls"
+    certIssuer: "letsencrypt"
+  }
+}
+
+# Basic with...as usage
+result1: with ingress as ing do
+  {
+    host: ing.host
+    path: ing.path
+  }
+end
+
+# Nested with...as usage
+result2: with ingress as ing do
+  with ing.tls as tls do
+    {
+      host: ing.host
+      secret: tls.secretName
+      issuer: tls.certIssuer
+    }
+  end
+end
+
+# With...as in array
+result3: with ingress as ing do
+  [
+    ing.host
+    ing.path
+  ]
+end
+###
+result1:
+  host: example.com
+  path: /api
+result2:
+  host: example.com
+  issuer: letsencrypt
+  secret: example-tls
+result3:
+- example.com
+- /api

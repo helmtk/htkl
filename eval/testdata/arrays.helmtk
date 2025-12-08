@@ -1,0 +1,19 @@
+empty: []
+numbers: [1, 2, 3]
+mixed: ["hello", 42, true]
+nested: [[1, 2], [3, 4]]
+###
+empty: []
+mixed:
+- hello
+- 42
+- true
+nested:
+- - 1
+  - 2
+- - 3
+  - 4
+numbers:
+- 1
+- 2
+- 3

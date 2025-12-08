@@ -1,0 +1,11 @@
+let x = 42
+let prefix = "app-"
+let computed = x * 2
+
+value: x
+with_prefix: prefix + "service"
+doubled: computed
+###
+doubled: 84
+value: 42
+with_prefix: app-service

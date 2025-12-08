@@ -1,0 +1,17 @@
+let x = 10
+x = 20
+
+let prefix = "old-"
+prefix = "new-"
+
+let img = "repo"
+let registry = "docker.io"
+img = registry + "/" + img
+
+result_x: x
+result_prefix: prefix
+result_img: img
+###
+result_img: docker.io/repo
+result_prefix: new-
+result_x: 20

@@ -1,0 +1,17 @@
+equal_true: 5 == 5
+equal_false: 5 == 3
+not_equal: 5 != 3
+less_than_true: 3 < 5
+less_than_false: 5 < 3
+less_equal: 5 <= 5
+greater_than: 10 > 5
+greater_equal: 5 >= 5
+###
+equal_false: false
+equal_true: true
+greater_equal: true
+greater_than: true
+less_equal: true
+less_than_false: false
+less_than_true: true
+not_equal: true

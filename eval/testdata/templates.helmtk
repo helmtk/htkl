@@ -1,0 +1,20 @@
+define("double") x * 2
+
+define("add") a + b
+
+define("makeLabel") do
+    app: app
+    version: "1.0"
+end
+
+doubled: include("double", {x: 21})
+added: include("add", {a: 10, b: 32})
+labels: {
+  include("makeLabel", {app: "myapp"})
+}
+###
+doubled: 42
+added: 42
+labels:
+  app: myapp
+  version: "1.0"

@@ -1,0 +1,16 @@
+simple: {
+    name: "test"
+    count: 42
+}
+nested: {
+    outer: {
+        inner: "value"
+    }
+}
+###
+nested:
+  outer:
+    inner: value
+simple:
+  count: 42
+  name: test

@@ -1,0 +1,13 @@
+and_true_true: true && true
+and_true_false: true && false
+or_false_false: false || false
+or_true_false: true || false
+not_true: !true
+not_false: !false
+###
+and_true_false: false
+and_true_true: true
+not_false: true
+not_true: false
+or_false_false: false
+or_true_false: true

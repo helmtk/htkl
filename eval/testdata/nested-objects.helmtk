@@ -1,0 +1,13 @@
+metadata: {
+    name: "myapp"
+    labels: {
+        app: "myapp"
+        tier: "frontend"
+    }
+}
+###
+metadata:
+  labels:
+    app: myapp
+    tier: frontend
+  name: myapp
