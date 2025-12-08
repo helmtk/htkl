@@ -8,6 +8,10 @@ htkl is a structured template language, used by the helmtk project.
 
 htkl provides a clean, readable syntax for generating structured data (like YAML or JSON), with support for templates, expressions, control flow, and built-in functions. It's designed to make configuration management more maintainable and less error-prone.
 
+```go
+import "helmtk.dev/code/hktl
+```
+
 ## Features
 
 - **Structured Data**: Define objects and arrays with a clean, indentation-aware syntax
