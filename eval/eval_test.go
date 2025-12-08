@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/helmtk/htkl/parser"
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/parser"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 func TestArithmetic(t *testing.T) {

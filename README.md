@@ -1,4 +1,4 @@
-[![Go Reference](https://pkg.go.dev/badge/github.com/helmtk/htkl.svg)](https://pkg.go.dev/github.com/helmtk/htkl)
+[![Go Reference](https://pkg.go.dev/badge/helmtk.dev/code/htkl.svg)](https://pkg.go.dev/helmtk.dev/code/htkl)
 
 # htkl
 

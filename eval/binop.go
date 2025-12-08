@@ -3,7 +3,7 @@ package eval
 import (
 	"fmt"
 
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 // Arithmetic operations

@@ -1,8 +1,8 @@
 package eval
 
 import (
-	"github.com/helmtk/htkl/parser"
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/parser"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 // evalStringLiteral evaluates a string literal

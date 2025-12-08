@@ -3,7 +3,7 @@ package funcs
 import (
 	"testing"
 
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 func TestUpperFunc(t *testing.T) {

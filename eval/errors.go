@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/helmtk/htkl/parser"
+	"helmtk.dev/code/htkl/parser"
 )
 
 // EvalError represents an error that occurred during evaluation

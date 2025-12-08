@@ -5,7 +5,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 // Registry holds all built-in functions

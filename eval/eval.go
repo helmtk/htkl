@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/helmtk/htkl/parser"
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/parser"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 // EvalDocument evaluates a complete helmtk document

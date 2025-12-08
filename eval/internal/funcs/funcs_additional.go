@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/helmtk/htkl/runtime"
+	"helmtk.dev/code/htkl/runtime"
 )
 
 // Utility functions

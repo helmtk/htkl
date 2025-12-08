@@ -3,7 +3,7 @@ package runtime
 import (
 	"fmt"
 
-	"github.com/helmtk/htkl/parser"
+	"helmtk.dev/code/htkl/parser"
 )
 
 // Scope manages variable bindings and template definitions
