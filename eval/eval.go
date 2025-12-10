@@ -11,6 +11,7 @@ import (
 // EvalDocument evaluates a complete helmtk document
 // Returns an ArrayValue containing all root-level documents
 func EvalDocument(doc *parser.Document, root *runtime.Scope) (runtime.Value, error) {
+
 	docColl := &documentCollector{}
 	e := evaluator{
 		scope: root,
@@ -623,7 +624,7 @@ func (e *evaluator) callFunction(pos parser.Pos, name string, args []runtime.Val
 	// Look up the function in the registry
 	fn, ok := e.scope.GetFunction(name)
 	if !ok {
-		return nil, fmt.Errorf("undefined function: %s", name)
+		return nil, errorf(pos, "undefined function: %s", name)
 	}
 
 	// Call the function
@@ -688,7 +689,8 @@ func (e *evaluator) evalIncludeStatement(n *parser.IncludeExpression) error {
 	}
 
 	// Create new scope for template evaluation
-	tmplScope := runtime.NewScope(e.scope)
+	tmplScope := runtime.NewScope(nil)
+	tmplScope.Link(e.scope)
 
 	if n.Context != nil {
 		val, err := e.evalExpression(n.Context)

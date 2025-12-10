@@ -199,6 +199,41 @@ func ToBool(v Value) bool {
 	return v.IsTruthy()
 }
 
+// ToNative converts a Value to a native Go value.
+// Returns:
+//   - string for StringValue
+//   - float64 for NumberValue
+//   - bool for BoolValue
+//   - nil for NullValue
+//   - []any for ArrayValue
+//   - map[string]any for ObjectValue
+func ToNative(v Value) any {
+	switch val := v.(type) {
+	case *StringValue:
+		return val.Value
+	case *NumberValue:
+		return val.Value
+	case *BoolValue:
+		return val.Value
+	case *NullValue:
+		return nil
+	case *ArrayValue:
+		result := make([]any, len(val.Elements))
+		for i, elem := range val.Elements {
+			result[i] = ToNative(elem)
+		}
+		return result
+	case *ObjectValue:
+		result := make(map[string]any, len(val.Fields))
+		for k, v := range val.Fields {
+			result[k] = ToNative(v)
+		}
+		return result
+	default:
+		return nil
+	}
+}
+
 // Constructor helpers
 
 func NewString(s string) *StringValue {

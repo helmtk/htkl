@@ -17,13 +17,17 @@ type Scope struct {
 
 // NewScope creates a new scope with an optional parent
 func NewScope(parent *Scope) *Scope {
-	return &Scope{
+	s := &Scope{
 		parent:    parent,
 		vars:      make(map[string]Value),
 		globals:   make(map[string]Value),
 		funcs:     make(map[string]Func),
 		templates: make(map[string]*Template),
 	}
+	if parent != nil {
+		s.Link(parent)
+	}
+	return s
 }
 
 func (s *Scope) GetFunction(name string) (Func, bool) {

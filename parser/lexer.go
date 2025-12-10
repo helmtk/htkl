@@ -40,22 +40,22 @@ const (
 	TokenTrue
 	TokenFalse
 	TokenNull
-	TokenDot       // .
-	TokenAssign    // =
-	TokenPlus      // +
-	TokenMinus     // -
-	TokenMul       // *
-	TokenDiv       // /
-	TokenPipe      // |
-	TokenAnd       // &&
-	TokenOr        // ||
-	TokenEq        // ==
-	TokenNeq       // !=
-	TokenNot       // !
-	TokenLt        // <
-	TokenLte       // <=
-	TokenGt        // >
-	TokenGte       // >=
+	TokenDot    // .
+	TokenAssign // =
+	TokenPlus   // +
+	TokenMinus  // -
+	TokenMul    // *
+	TokenDiv    // /
+	TokenPipe   // |
+	TokenAnd    // &&
+	TokenOr     // ||
+	TokenEq     // ==
+	TokenNeq    // !=
+	TokenNot    // !
+	TokenLt     // <
+	TokenLte    // <=
+	TokenGt     // >
+	TokenGte    // >=
 )
 
 func (t TokenType) String() string {

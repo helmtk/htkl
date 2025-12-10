@@ -377,9 +377,9 @@ func (p *Parser) parseDefinition() (*Definition, error) {
 	}
 
 	return &Definition{
-		Name:   name,
-		Body:   body,
-		Pos:    pos,
+		Name: name,
+		Body: body,
+		Pos:  pos,
 	}, nil
 }
 
@@ -664,9 +664,9 @@ func (p *Parser) parseIncludeExpression() (*IncludeExpression, error) {
 	}
 
 	return &IncludeExpression{
-		Name: name,
+		Name:    name,
 		Context: context,
-		Pos:  pos,
+		Pos:     pos,
 	}, nil
 }
 

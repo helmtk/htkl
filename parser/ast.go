@@ -310,9 +310,9 @@ func (c *Comment) GetPos() Pos { return c.Pos }
 
 // Definition represents a template definition (e.g., define(name, arg1, arg2) body)
 type Definition struct {
-	Name   string
-	Body   []Node // Single value for expression form, multiple for do block
-	Pos    Pos
+	Name string
+	Body []Node // Single value for expression form, multiple for do block
+	Pos  Pos
 }
 
 func (d *Definition) node()       {}
@@ -320,16 +320,16 @@ func (d *Definition) GetPos() Pos { return d.Pos }
 
 // IncludeExpression represents a template inclusion (e.g., include(name, arg1, arg2))
 type IncludeExpression struct {
-	Name string
+	Name    string
 	Context Expression
-	Pos  Pos
+	Pos     Pos
 }
 
-func (i *IncludeExpression) node()       {}
-func (i *IncludeExpression) expression() {}
-func (i *IncludeExpression) statement()  {}
-func (i *IncludeExpression) valueStatement()  {}
-func (i *IncludeExpression) GetPos() Pos { return i.Pos }
+func (i *IncludeExpression) node()           {}
+func (i *IncludeExpression) expression()     {}
+func (i *IncludeExpression) statement()      {}
+func (i *IncludeExpression) valueStatement() {}
+func (i *IncludeExpression) GetPos() Pos     { return i.Pos }
 
 // CallExpression represents a function call (e.g., upper(name), quote(str))
 type CallExpression struct {

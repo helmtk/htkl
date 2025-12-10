@@ -69,4 +69,3 @@ func TestObjectValue(t *testing.T) {
 		t.Error("empty object should be falsy")
 	}
 }
-
