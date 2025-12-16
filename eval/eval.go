@@ -591,19 +591,19 @@ func (e *evaluator) evalPipe(n *parser.BinaryOp) (runtime.Value, error) {
 	switch right := n.Right.(type) {
 	case *parser.Identifier:
 		// Simple pipe: val | funcName
-		// Call the function with val as the first argument
+		// Call the function with val as the last argument (Go template behavior)
 		return e.callFunction(right.Pos, right.Name, []runtime.Value{val})
 
 	case *parser.CallExpression:
 		// Pipe with function call: val | funcName(arg1, arg2)
-		// Prepend val to the arguments
+		// Append val to the arguments (Go template behavior)
 		funcName, ok := right.Function.(*parser.Identifier)
 		if !ok {
 			return nil, errorf(n.Pos, "pipe right side must be a function name")
 		}
 
-		// Evaluate the arguments
-		args := []runtime.Value{val}
+		// Evaluate the arguments, then append the piped value as the last argument
+		var args []runtime.Value
 		for _, arg := range right.Args {
 			argVal, err := e.evalExpression(arg)
 			if err != nil {
@@ -611,6 +611,7 @@ func (e *evaluator) evalPipe(n *parser.BinaryOp) (runtime.Value, error) {
 			}
 			args = append(args, argVal)
 		}
+		args = append(args, val)
 
 		return e.callFunction(right.Function.GetPos(), funcName.Name, args)
 
@@ -759,7 +760,7 @@ func (e *evaluator) evalInterpolatedString(n *parser.InterpolatedString) (runtim
 		}
 		str, err := runtime.ToString(val)
 		if err != nil {
-			return nil, err
+			return nil, wraperr(n.Pos, err)
 		}
 		result += str
 	}

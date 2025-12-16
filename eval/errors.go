@@ -26,6 +26,13 @@ func (e *EvalError) Error() string {
 	return e.Message
 }
 
+func wraperr(pos parser.Pos, err error) error {
+	return &EvalError{
+		Message: err.Error(), Filename: pos.Filename,
+		Line: pos.Line,
+		Col:  pos.Col}
+}
+
 // errorf creates an error with position information from the node
 func errorf(pos parser.Pos, format string, args ...interface{}) error {
 	msg := fmt.Sprintf(format, args...)
